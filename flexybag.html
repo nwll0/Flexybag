@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEXYBAG | Lebih dari Sekadar Tas Belanja Ramah Lingkungan</title>
+    <link rel="icon" type="image/png" href="logo2.png">
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Warna */
+        :root {
+            --primary: #2E8B57;
+            --secondary: #3CB371;
+            --accent: #FF6B6B;
+            --light: #F5F5F5;
+            --dark: #1E3F1E;
+            --text: #333;
+            --text-light: #5E6D5E;
+        }
+
+        /* Global Styles */
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        a {
+            text-decoration: none;
+            color: var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            margin: 20px auto;
+        }
+
+        /* bagian atas */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+    .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.logo-img {
+    height: 70px; /* Adjust as needed */
+    width: auto;
+    display: block;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 30px; /* Smaller logo on mobile */
+    }
+}
+        /* pahlawan kesiangan */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1602143407151-7111542de6e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* tentang produk */
+        .about-product {
+            background-color: white;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* permasalahan wkwk */
+        .problem {
+            background-color: var(--light);
+            text-align: center;
+        }
+
+        .problem-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 22%;
+            min-width: 200px;
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        /* Features */
+        .features {
+            background-color: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 5px solid var(--secondary);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        /* foto" manjaa */
+        .gallery {
+            background-color: var(--light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* yokkk pesannn yokk */
+        .order {
+            background-color: white;
+        }
+
+        .order-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--light);
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 2px solid var(--secondary);
+        }
+
+        .order-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .order-header h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .order-price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .order-price span {
+            font-size: 1.5rem;
+            font-weight: normal;
+        }
+
+        .order-body {
+            padding: 40px;
+        }
+
+        .order-features {
+            margin-bottom: 30px;
+        }
+
+        .order-features ul {
+            list-style: none;
+        }
+
+        .order-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+        }
+
+        .order-features li:before {
+            content: "✓";
+            color: var(--secondary);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .order-form {
+            margin-top: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: white;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .order-button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* bagian bawah */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        /* buat responsipp */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                margin-bottom: 15px;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .stat-item {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- bagian atasss -->
+    <header>
+        <div class="container">
+            <nav>
+    <a href="#" class="logo">
+        <img src="logo2.png" alt="FLEXYBAG Logo" class="logo-img"> FLEXY<span>BAG</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#problem">Masalah</a></li>
+        <li><a href="#solution">Solusi</a></li>
+        <li><a href="#order">Pesan</a></li>
+        <li><a href="#contact">Kontak</a></li>
+    </ul>
+    <div class="hamburger">
+        <span>☰</span>
+    </div>
+</nav>
+        </div>
+    </header>
+
+    <!-- pahlawan kesiangannn -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>FLEXYBAG – Lebih dari Sekadar Tas Belanja</h1>
+                <p>Tas lipat ramah lingkungan berbahan rPET yang stylish dan multifungsi untuk gaya hidup berkelanjutan.</p>
+                <div class="hero-buttons">
+                    <a href="#order" class="btn">Pesan Sekarang</a>
+                    <a href="#solution" class="btn btn-accent">Lihat Fitur</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- masalahhh arghhhh -->
+    <section class="section problem" id="problem">
+        <div class="container">
+            <h2 class="section-title">Krisis Sampah Plastik Indonesia</h2>
+            <p>Indonesia menghadapi krisis sampah plastik yang serius. Dengan tingkat daur ulang di bawah 10%, kita membutuhkan solusi nyata dan praktis.</p>
+            
+            <div class="problem-stats">
+                <div class="stat-item">
+                    <div class="stat-number">64 Juta</div>
+                    <div class="stat-desc">Ton sampah per tahun</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3.2 Juta</div>
+                    <div class="stat-desc">Ton mencemari laut</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">&lt;10%</div>
+                    <div class="stat-desc">Tingkat daur ulang</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Flexybag </div>
+                    <div class="stat-desc">Kurangi plastik sekali pakai</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- tentangg produkk kamek -->
+    <section class="section about-product" id="solution">
+        <div class="container">
+            <h2 class="section-title">Solusi Kami: FLEXYBAG</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Tas Ramah Lingkungan dengan Banyak Fungsi</h3>
+                    <p>FLEXYBAG dibuat dari Recycled Polyethylene Terephthalate (rPET) - hasil daur ulang plastik yang memberi kehidupan baru untuk limbah.</p>
+                    <p>Tak hanya mengurangi sampah plastik, FLEXYBAG juga dirancang untuk memenuhi kebutuhan gaya hidup modern yang praktis dan stylish.</p>
+                    
+                    <h4 style="margin-top: 20px;">Spesifikasi Produk:</h4>
+                    <ul style="margin: 15px 0 20px 20px; color: var(--text-light);">
+                        <li style="margin-bottom: 8px;">Material: rPET + lapisan thermal foil</li>
+                        <li style="margin-bottom: 8px;">Fungsi: Tas lipat, gantungan kunci, strap HP, aksesoris tas</li>
+                        <li style="margin-bottom: 8px;">Fitur: Ringan, tahan lama, mudah dibersihkan</li>
+                        <li>Harga: Kompetitif dan sepadan dengan gaya hidup berkelanjutan</li>
+                    </ul>
+                    
+                    <a href="#order" class="btn" style="margin-top: 10px;">Pesan Sekarang</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="FLEXYBAG">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section features">
+        <div class="container">
+            <h2 class="section-title">Kenapa Pilih FLEXYBAG?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛍️</div>
+                    <h3>Multifungsi & Stylish</h3>
+                    <p>Tak hanya tas belanja – bisa jadi gantungan kunci, aksesoris tas, hingga strap handphone. Cocok untuk yang aktif dan bergaya.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">❄️</div>
+                    <h3>Isolasi Suhu Canggih</h3>
+                    <p>Dilengkapi thermal insulated liner yang menjaga suhu makanan & minuman tetap stabil. Ideal untuk belanja frozen food atau minuman dingin.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Kuat & Higienis</h3>
+                    <p>Mudah dicuci, cepat kering, tidak menyerap bau. Dibuat untuk pemakaian berulang tanpa ribet.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Ramah Lingkungan</h3>
+                    <p>Satu FLEXYBAG = satu langkah mengurangi plastik sekali pakai. Gabung dalam perubahan positif dengan cara praktis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- foto" manjaa -->
+    <section class="section gallery">
+        <div class="container">
+            <h2 class="section-title">Galeri FLEXYBAG</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="FLEXYBAG 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1496203695688-3b8985780d6a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="FLEXYBAG 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="FLEXYBAG 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="FLEXYBAG 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- yokkk pesan yokkk -->
+    <section class="section order" id="order">
+        <div class="container">
+            <h2 class="section-title">Pesan FLEXYBAG Sekarang</h2>
+            <div class="order-container">
+                <div class="order-header">
+                    <h2>FLEXYBAG</h2>
+                    <p>Lebih dari sekadar tas belanja</p>
+                    <div class="order-price">Rp 55.000<span></span></div>
+                    <p>Stok Terbatas - Pesan Sekarang Juga!</p>
+                </div>
+                <div class="order-body">
+                    <div class="order-features">
+                        <h3 style="margin-bottom: 20px; color: var(--dark);">Fitur Produk:</h3>
+                        <ul>
+                            <li>Material rPET daur ulang plastik</li>
+                            <li>Lapisan isolasi termal</li>
+                            <li>Multifungsi (tas, gantungan kunci, strap HP)</li>
+                            <li>Mudah dilipat dan dibawa</li>
+                            <li>Gratis ongkir </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="order-form">
+                        <h3 style="margin-bottom: 20px; color: var(--dark);">Form Pemesanan</h3>
+                        <form id="orderForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Nama Lengkap</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">No. WhatsApp</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="quantity">Jumlah Pesanan</label>
+                                    <select id="quantity" name="quantity" required>
+                                        <option value="1">1 pcs</option>
+                                        <option value="2">2 pcs</option>
+                                        <option value="3">3 pcs</option>
+                                        <option value="5">5 pcs</option>
+                                        <option value="10">10 pcs (special discount)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="color">Warna</label>
+                                    <select id="color" name="color" required>
+                                        <option value="hijau">Hijau</option>
+                                        <option value="biru">Biru</option>
+                                        <option value="abu">Abu-abu</option>
+                                        <option value="hitam">Hitam</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">Alamat Pengiriman</label>
+                                <textarea id="address" name="address" rows="3" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="notes">Catatan (Opsional)</label>
+                                <textarea id="notes" name="notes" rows="2"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-accent order-button">Pesan Sekarang</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta">
+        <div class="container">
+            <h2>Saatnya #BerubahBarengFLEXYBAG</h2>
+            <p>Mulai dari diri sendiri. Beli FLEXYBAG hari ini dan bawa perubahan untuk bumi yang lebih baik – tanpa meninggalkan gaya dan kenyamananmu.</p>
+            <a href="https://wa.me/6285860591869?text=Saya%20ingin%20memesan%20FLEXYBAG" class="btn btn-accent">Hubungi via WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- ini bagian bawah -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tentang FLEXYBAG</h3>
+                    <p>Solusi tas ramah lingkungan berbahan rPET untuk mengurangi sampah plastik sekaligus mendukung gaya hidup berkelanjutan.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak Kami</h3>
+                    <ul>
+                        <li>📞 (+62) 858-6059-1869</li>
+                        <li>📱 WhatsApp: 0858-6059-1869</li>
+                        <li>🏢 Pontianak, Indonesia</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Jam Operasional</h3>
+                    <ul>
+                        <li>Senin-Jumat: 09.00-17.00</li>
+                        <li>Sabtu: 09.00-15.00</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Media Sosial</h3>
+                    <ul>
+                        <li><a href="#"> Instagram - flexybag_pkmk</a></li>
+                        <li><a href="#">TikTok -  @flexybag_pkmk</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FLEXYBAG. Semua hak dilindungi. #BerubahBarengFLEXYBAG</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ingattt ini JavaScript for responsive menu
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // ini buattt Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const quantity = document.getElementById('quantity').value;
+            const color = document.getElementById('color').value;
+            
+            const message = `Halo, saya ${name} ingin memesan FLEXYBAG:\n\n- Jumlah: ${quantity} pcs\n- Warna: ${color}\n\nSilakan konfirmasi ketersediaan dan total pembayaran. Terima kasih!`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            
+            window.location.href = `https://wa.me/6285860591869?text=${encodedMessage}`;
+        });
+    </script>
+</body>
+</html>
