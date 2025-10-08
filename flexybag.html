@@ -815,17 +815,28 @@
         document.getElementById('orderForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const quantity = document.getElementById('quantity').value;
-            const color = document.getElementById('color').value;
+const name = document.getElementById('name').value;
+const phone = document.getElementById('phone').value;
+const quantity = document.getElementById('quantity').value;
+const color = document.getElementById('color').value;
+const address = document.getElementById('address').value;
+const notes = document.getElementById('notes').value || "-";
+
+const message = `Halo, saya ${name} ingin memesan FLEXYBAG:\n
+📦 Jumlah: ${quantity} pcs
+🎨 Warna: ${color}
+🏠 Alamat: ${address}
+📝 Catatan: ${notes}
+📱 No. WhatsApp: ${phone}
+
+Silakan konfirmasi ketersediaan dan total pembayaran. Terima kasih!`;
+
+const encodedMessage = encodeURIComponent(message);
+
+window.location.href = `https://wa.me/6285860591869?text=${encodedMessage}`;
             
-            const message = `Halo, saya ${name} ingin memesan FLEXYBAG:\n\n- Jumlah: ${quantity} pcs\n- Warna: ${color}\n\nSilakan konfirmasi ketersediaan dan total pembayaran. Terima kasih!`;
-            
-            const encodedMessage = encodeURIComponent(message);
-            
-            window.location.href = `https://wa.me/6285860591869?text=${encodedMessage}`;
         });
     </script>
 </body>
 </html>
+
